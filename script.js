@@ -1,8 +1,13 @@
+var defaults = [
+  "Welcome",
+  "Sign contract",  
+  "Drink coffee",
+  "Contemplate life",  
+  "Get access rights to everything"]
+
 const itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 const colorsArray = localStorage.getItem('colors') ? JSON.parse(localStorage.getItem('colors')) : [];
-// const firstDayOnTheJob = localStorage.getItem('isFirstDay') ? JSON.parse(localStorage.getItem('isFirstDay')) : [];
 var firstDayOnTheJob = localStorage.getItem("first_time");
-const defaults = ["1. Welcome", "2. Drink coffee", "3. Help"]
 
 if(!firstDayOnTheJob) {
     localStorage.setItem("first_time","1");
@@ -21,10 +26,9 @@ document.querySelector("#new_item").addEventListener("keypress", (add) => {
   }
 })
 
+
 function initialize_itemsArray(){
 
-  // var fs = require("fs");
-  // var text = fs.readFileSync("./default.txt");
   // var textByLine = text.split(";;;")
   for(let i=0; i<defaults.length; i++){
 
